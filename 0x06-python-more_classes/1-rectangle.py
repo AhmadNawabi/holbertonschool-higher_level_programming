@@ -1,70 +1,37 @@
 #!/usr/bin/python3
-"""
-	Rectangle module
-    	"""
+
+'''1-rectangle: Python Function that defines the Rectangle type'''
 
 
 class Rectangle:
-    """
-        Rectangle Class
-        Attribute:
-            width (int): Private
-            height (int) : Private
-        """
+'''Defines the Rectangle type'''
+
     def __init__(self, width=0, height=0):
-        """
-            Init Rectangle Class
-        Args:
-            width (int): The width of rectangle
-            height (int): Thhe height of rectangle
-        """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """
-            width getter
-            Return: The width of the Rectangle (int)
-        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """
-            Width setter
-        Args:
-            Value (int) : a value to set
-        Raises:
-            TypeError: When value is not int
-            ValueError: When value is less than 0
-        """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        else:
+            self.__width = value
 
     @property
     def height(self):
-        """
-            height getter
-        Return: the height of the rectangle (int)
-        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-            height setter
-        Args:
-            value (int) : value to be set
-        Raises:
-            TypeError: When value is not int
-            ValueError: When value is less than 0
-        """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        else:
+            self.__height = value
